@@ -28,9 +28,7 @@
       "material": [
         "dist/material"
       ],
-      "material/*": [
-        "dist/material/*"
-      ]
+      "@gameStateSync/material": ["projects/material/src/index.ts"]
     }
   }
 }

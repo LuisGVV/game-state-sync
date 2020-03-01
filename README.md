@@ -1,6 +1,6 @@
 # GameStateSync
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.9.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.9 and uses [Angular Material v7](https://v7.material.angular.io/)
 
 ## Folder structure and navigation
 
@@ -24,7 +24,10 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
   > $ ng g library core-data --entryFile=index
 
 2- Creating the angular material library to the default app project:
-  > $ ng g library core-data --entryFile=index
+  > `$ ng g library core-data --entryFile=index`
+
+3- Install the Angular Material packages (grab 7.3.7, it probably is compatible with angular 7.2)
+  > `$ npm install --save @angular/material@7.3.7 @angular/cdk@7.3.7 @angular/animations@7.2.16`
 
 
 Tricks, tips and remember: 
