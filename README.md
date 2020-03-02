@@ -29,6 +29,12 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 3- Install the Angular Material packages (grab 7.3.7, it probably is compatible with angular 7.2)
   > `$ npm install --save @angular/material@7.3.7 @angular/cdk@7.3.7 @angular/animations@7.2.16`
 
+4- Create the event service that will subscribe to the game events stream
+> `$ ng g service event --flat=false --project=core-data`
+
+5- Create the feature module (which includes routing) and its component
+> `$ ng g module events --routing`
+> `$ ng g c events`
 
 Tricks, tips and remember: 
 

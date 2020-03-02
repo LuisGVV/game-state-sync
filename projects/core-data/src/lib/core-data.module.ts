@@ -1,10 +1,13 @@
 import { NgModule } from '@angular/core';
-import { CoreDataComponent } from './core-data.component';
+import { EventService } from './event/event.service'
 
 @NgModule({
-  declarations: [CoreDataComponent],
+  declarations: [],
   imports: [
   ],
-  exports: [CoreDataComponent]
+  exports: [],
+  providers: [
+    EventService,
+  ]
 })
 export class CoreDataModule { }
