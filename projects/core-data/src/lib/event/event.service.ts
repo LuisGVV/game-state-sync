@@ -5,10 +5,10 @@ import { PubNubAngular } from 'pubnub-angular2';
   providedIn: 'root'
 })
 export class EventService {
-  pubNubAngular: PubNubAngular;
 
   constructor(
-    pubNubAngular: PubNubAngular
+    private pubNubAngular: PubNubAngular,
+    // private eventsFacade: EventsFacade,
   ) {
     this.pubNubAngular = pubNubAngular;
   }
