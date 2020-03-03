@@ -32,7 +32,7 @@ export class EventService {
             });
         }
       },
-      message: function (message) {
+      message: function ({ message }) {
         console.log(message);
       }
     });
@@ -46,8 +46,8 @@ export class EventService {
 
   stopSubscription() {
     this.pubNubAngular.unsubscribe({
-      channels : ['pubnub-game-state']
-  });
+      channels: ['pubnub-game-state']
+    });
   }
 
 }
