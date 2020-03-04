@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { EventsRoutingModule } from './events-routing.module';
 import { EventsComponent } from './events.component';
-import { MaterialModule } from '@gameStateSync/material';
+import { MaterialModule } from 'projects/material/src/index';
 
 @NgModule({
   imports: [
