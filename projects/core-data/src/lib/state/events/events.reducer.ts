@@ -1,6 +1,7 @@
 import { Event, EventStatistics } from '../../event/event.model';
 import { EventsActionTypes } from './events.actions';
 import { EntityState, EntityAdapter, createEntityAdapter } from '@ngrx/entity';
+import * as _ from 'lodash';
 
 export const initialEvents: Event[] = [
     {
@@ -31,21 +32,26 @@ export const initialEvents: Event[] = [
 
 // Shape of State:
 export interface EventsState extends EntityState<Event> {
-    stats: EventStatistics | null,
+    stats: EventStatistics,
 }
 
 // Create entity adapter:
-export const adapter: EntityAdapter<Event> = createEntityAdapter<Event>();
+export const adapter: EntityAdapter<Event> = createEntityAdapter<Event>({
+    selectId: _event => _.uniqueId('Event_')
+});
 
 // Define an initial state:
 export const initialState: EventsState = adapter.getInitialState({
-    stats: null
+    stats: {
+        average_coord_x: 0,
+        average_coord_y: 0,
+    }
 });
 
 // A simple reducer
 export function eventsReducer(state: EventsState = initialState, action): EventsState {
     switch (action.type) {
-        case EventsActionTypes.MessageReceived:
+        case EventsActionTypes.AddEvent:
             let newEventState = adapter.addOne(action.payload, state);
             // The following can be improved or abstracted into another function
             let sumX = Object.keys(newEventState.entities).map(k => newEventState.entities[k].coord_x).reduce((previous, current) => current += previous);

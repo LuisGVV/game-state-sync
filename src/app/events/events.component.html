@@ -1,5 +1,43 @@
 <div class="container">
-  <p>
-    events works!
-  </p>
+  <table mat-table [dataSource]="events$ | async | slice:-50" class="mat-elevation-z8">
+    <ng-container matColumnDef="player_id">
+      <th mat-header-cell *matHeaderCellDef> Player ID </th>
+      <td mat-cell *matCellDef="let event"> {{ event.player_id }} </td>
+      <td mat-footer-cell *matFooterCellDef> Average </td>
+    </ng-container>
+
+    <ng-container matColumnDef="coord_x">
+      <th mat-header-cell *matHeaderCellDef> Coord X </th>
+      <td mat-cell *matCellDef="let event"> {{ event.coord_x }} </td>
+      <td mat-footer-cell *matFooterCellDef> {{ (eventStatistics$ | async).average_coord_x | number:'2.1-2' }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="coord_y">
+      <th mat-header-cell *matHeaderCellDef> Coord Y </th>
+      <td mat-cell *matCellDef="let event"> {{ event.coord_y}} </td>
+      <td mat-footer-cell *matFooterCellDef> {{ (eventStatistics$ | async)?.average_coord_y | number:'2.1-2' }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="action_name">
+      <th mat-header-cell *matHeaderCellDef> Action Name </th>
+      <td mat-cell *matCellDef="let event"> {{ event.action_name }} </td>
+      <td mat-footer-cell *matFooterCellDef></td>
+    </ng-container>
+
+    <ng-container matColumnDef="action_type">
+      <th mat-header-cell *matHeaderCellDef> Action Type </th>
+      <td mat-cell *matCellDef="let event"> {{ event.action_type }} </td>
+      <td mat-footer-cell *matFooterCellDef></td>
+    </ng-container>
+
+    <ng-container matColumnDef="action_value">
+      <th mat-header-cell *matHeaderCellDef> Action Value </th>
+      <td mat-cell *matCellDef="let event"> {{ event.action_value }} </td>
+      <td mat-footer-cell *matFooterCellDef></td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    <tr mat-footer-row *matFooterRowDef="displayedColumns; sticky: true"></tr>
+  </table>
 </div>

@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { select, Store } from '@ngrx/store';
-import { filter } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 
 import { Event, EventStatistics } from '../../event/event.model';

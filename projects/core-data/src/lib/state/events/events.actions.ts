@@ -2,7 +2,8 @@ import { Action } from '@ngrx/store';
 import { Event } from "../../event/event.model";
 
 export enum EventsActionTypes {
-    MessageReceived = '[Events] Message Received'
+    MessageReceived = '[Events] Message Received',
+    AddEvent = '[Events] Add Data',
 }
 
 export class MessageReceived implements Action {
@@ -10,4 +11,10 @@ export class MessageReceived implements Action {
     constructor (public payload: Event) {}
 }
 
-export type EventsActions = MessageReceived; // To include other action types using `|`
+export class AddEvent implements Action {
+    readonly type = EventsActionTypes.AddEvent;
+    constructor (public payload: Event) {}
+}
+
+export type EventsActions = MessageReceived
+    | AddEvent ; // To include other action types using `|`
