@@ -2,8 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { EffectsModule } from '@ngrx/effects';
 
-import { MaterialModule } from 'projects/material/src/index';
-import { CoreDataModule, EventsEffects } from 'projects/core-data/src/index';
+import { MaterialModule } from '../../projects/material/src/index';
+import { CoreDataModule, EventsEffects } from '../../projects/core-data/src/index';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';

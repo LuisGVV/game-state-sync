@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 
-import { EventService, Event, EventStatistics, EventsFacade } from 'projects/core-data/src/index';
+import { EventService, Event, EventStatistics, EventsFacade } from '../../../projects/core-data/src/index';
 import { Observable } from 'rxjs';
 
 @Component({
