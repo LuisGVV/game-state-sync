@@ -1,7 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 
-import { EventService } from '@gameStateSync/core-data';
-import { Event, EventStatistics, EventsFacade } from '@gameStateSync/core-data';
+import { EventService, Event, EventStatistics, EventsFacade } from 'projects/core-data/src/index';
 import { Observable } from 'rxjs';
 
 @Component({
